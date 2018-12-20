@@ -1,0 +1,99 @@
+// package.json 생성하기
+$ npm init
+This utility will walk you through creating a package.json file.
+It only covers the most common items, and tries to guess sensible defaults.
+
+See `npm help json` for definitive documentation on these fields
+and exactly what they do.
+
+Use `npm install <pkg>` afterwards to install a package and
+save it as a dependency in the package.json file.
+
+Press ^C at any time to quit.
+package name: (05_npm) npm_test     // 프로젝트 name 속성
+version: (1.0.0) 1.0.0              // 패키지의 버전
+description: pacakge.json test      // 프로젝트 설명
+entry point: (index.js) index.js    // 자바스크립트 실행 파일 진입점, 보통 마지막으로 module.exports를 하는 파일을 지정 package.json의 main 속성에 저장됨
+test command:                       // 코드를 테스트 할 때 입력할 명령어. package.json scripts 속성 안의 test 속성에 저장
+git repository:                     // 코드를 저장해 둔 Git 저장소 주소. package.json의 repository 속성에 저장
+keywords:                           // npm 공식 홈페이지(https://npmjs.com)에서 패키지를 쉽게 찾을 수 있도록 해줌. package.json의 keywords 속성에 저장
+author: yslee                       // 이름 입력
+license: (ISC)                      // 해당 패키지의 라이선스
+About to write to C:\Users\yslee\Desktop\D\work\nodejs\05_npm\package.json:
+
+{
+  "name": "npm_test",
+  "version": "1.0.0",
+  "description": "pacakge.json test",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "yslee",
+  "license": "ISC"
+}
+
+
+// test script 실행
+$ npm run test
+
+> npm_test@1.0.0 test C:\Users\yslee\Desktop\D\work\nodejs\05_npm
+> echo "Error: no test specified" && exit 1
+
+"Error: no test specified"
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! npm_test@1.0.0 test: `echo "Error: no test specified" && exit 1`
+npm ERR! Exit status 1
+npm ERR!
+npm ERR! Failed at the npm_test@1.0.0 test script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+npm WARN Local package.json exists, but node_modules missing, did you mean to install?
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     C:\Users\yslee\AppData\Roaming\npm-cache\_logs\2018-12-20T14_10_03_940Z-debug.log
+
+
+// express 설치
+$ npm install express
+npm notice created a lockfile as package-lock.json. You should commit this file.
+npm WARN npm_test@1.0.0 No repository field.
+
++ express@4.16.4
+added 48 packages in 3.293s
+
+
+// npm 모듈 동시 설치
+$ npm install morgan cookie-parser express-session
+npm WARN npm_test@1.0.0 No repository field.
+
++ cookie-parser@1.4.3
++ morgan@1.9.1
++ express-session@1.15.6
+added 8 packages in 1.598s
+
+
+// 개발용 패키지 설치 (개발 중에만 사용되는 패키지)
+$ npm install --save-dev nodemon
+
+> nodemon@1.18.9 postinstall C:\Users\yslee\Desktop\D\work\nodejs\05_npm\node_modules\nodemon
+> node bin/postinstall || exit 0
+
+Love nodemon? You can now support the project via the open collective:
+ > https://opencollective.com/nodemon/donate
+
+npm WARN npm_test@1.0.0 No repository field.
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.4 (node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.4: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
+
++ nodemon@1.18.9
+added 217 packages in 16.123s
+
+
+// 전역 패키지 설치
+$ npm install --global rimraf
+C:\Users\yslee\AppData\Roaming\npm\rimraf -> C:\Users\yslee\AppData\Roaming\npm\node_modules\rimraf\bin.js
++ rimraf@2.6.2
+added 12 packages in 1.226s
+
+
